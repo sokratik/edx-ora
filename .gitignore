@@ -17,5 +17,6 @@ django_cache/*
 tmpfile
 celerybeat-schedule
 docs/_build
+nohup.out
 logs/supervisor/*.log
 ml_models/*
