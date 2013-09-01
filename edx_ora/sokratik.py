@@ -9,9 +9,8 @@ from settings import *
 import json
 from logsettings import get_logger_config
 from os.path import expanduser
-
-HOME_FOLDER = path(expanduser("~"))
-CONFIG_ROOT = HOME_FOLDER / "sokratik-infra/json-configs"
+EBS_ROOT = path("/work/data")
+CONFIG_ROOT = path("/local/sokratik-infra/json-configs")
 # specified as an environment variable.  Typically this is set
 # in the service's upstart script and corresponds exactly to the service name.
 # Service variants apply config differences via env and auth JSON files,
@@ -34,7 +33,7 @@ MAX_NUMBER_OF_TIMES_TO_RETRY_GRADING = int(ENV_TOKENS.get('MAX_NUMBER_OF_TIMES_T
 
 #ML
 MIN_TO_USE_ML = int(ENV_TOKENS.get('MIN_TO_USE_ML', MIN_TO_USE_ML))
-ML_MODEL_PATH = os.path.join(HOME_FOLDER, ENV_TOKENS.get('ML_MODEL_PATH'))
+ML_MODEL_PATH = os.path.join(EBS_ROOT, ENV_TOKENS.get('ML_MODEL_PATH'))
 TIME_BETWEEN_ML_CREATOR_CHECKS = int(ENV_TOKENS.get('TIME_BETWEEN_ML_CREATOR_CHECKS', TIME_BETWEEN_ML_CREATOR_CHECKS))
 TIME_BETWEEN_ML_GRADER_CHECKS = int(TIME_BETWEEN_ML_GRADER_CHECKS)
 USE_S3_TO_STORE_MODELS = ENV_TOKENS.get('USE_S3_TO_STORE_MODELS', USE_S3_TO_STORE_MODELS)

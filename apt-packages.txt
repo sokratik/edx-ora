@@ -13,7 +13,7 @@ libxslt-dev
 yui-compressor
 graphviz
 graphviz-dev
-libmysqlclient-dev
+postgresql-server-dev-all
 libreadline6
 libreadline6-dev
 super
